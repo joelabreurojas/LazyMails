@@ -1,10 +1,11 @@
+from decouple import config
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from typing import Final
 
 
-BOT_TOKEN: Final = ''
-BOT_USERNAME: Final = 'MrMeetsBot'
+BOT_TOKEN: Final = config('TOKEN')
+BOT_USERNAME: Final = config('USERNAME')
 
 # Commands
 
