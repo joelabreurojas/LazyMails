@@ -1,4 +1,4 @@
-from mrmeets import create_app
+from lazymails import create_app
 
 if __name__ == '__main__':
     create_app()

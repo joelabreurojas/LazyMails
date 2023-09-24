@@ -25,50 +25,38 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def mail(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/mail', '').strip()
 
-    if update.message.chat.type == 'group':
+    if update.message.chat.type in ['group', 'supergroup']:
         chat_controller.set_mail(
             Chat(id=1, mail=text)
         )
-        await update.message.reply_text(
-            chat_controller.search(
-                Chat(id=1)
-            )
-        )
+        print(chat_controller.search(Chat(id=1)))
 
 
 async def settings(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/settings', '').strip()
     number: int = int(text)
 
-    if update.message.chat.type == 'group':
+    if update.message.chat.type in ['group', 'supergroup']:
         chat_controller.set_data(
             Chat(id=1, frequency=number)
         )
-        await update.message.reply_text(
-            chat_controller.search(
-                Chat(id=1)
-            )
-        )
+        print(chat_controller.search(Chat(id=1)))
 
 
 async def wait(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/wait', '').strip()
 
-    if update.message.chat.type == 'group':
+    if update.message.chat.type in ['group', 'supergroup']:
         chat_controller.set_data(
-            Chat(id=1, date=int(text))
+            Chat(id=1, date=text)
         )
-        await update.message.reply_text(
-            chat_controller.search(
-                Chat(id=1)
-            )
-        )
+        print(chat_controller.search(Chat(id=1)))
 
 
 async def now(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/now', '').strip()
 
-    if update.message.chat.type == 'group':
+    if update.message.chat.type in ['group', 'supergroup']:
         sendMessage(text)
 
 

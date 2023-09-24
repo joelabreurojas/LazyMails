@@ -45,5 +45,5 @@ def create_app():
     app.add_error_handler(error)
 
     # Polls the bot
-    print('Polling...')
+    print('Listening...')
     app.run_polling()

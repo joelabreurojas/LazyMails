@@ -4,7 +4,7 @@ from typing import List
 
 from ..models.entity import Chat
 
-DATABASE = Path.cwd() / 'mrmeets' / 'database' / 'chat.db'
+DATABASE = Path.cwd() / 'lazymails/' / 'database' / 'chat.db'
 
 
 def fill_data(chat: Chat) -> Chat:

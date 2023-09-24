@@ -6,6 +6,7 @@ from ..models.entity import Chat
 
 
 def set_mail(chat_: Chat):
+    print('Help')
     if not chat_db.chat_exists(chat_):
         chat = util.fill_data(chat_)
         chat_db.create(chat)
