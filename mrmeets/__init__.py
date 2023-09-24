@@ -1,19 +1,33 @@
-from .bot import start_command, help_command, custom_command, handle_message, error
+from .bot import (
+    start,
+    help,
+    mail,
+    settings,
+    wait,
+    now,
+    handle_message,
+    error
+)
 from decouple import config
-from telegram.ext import Application, CommandHandler, MessageHandler, filters
-from typing import Final
-
-BOT_TOKEN: Final = config('TOKEN')
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    MessageHandler,
+    filters
+)
 
 
 def create_bot():
     print('Startting bot...')
-    app = Application.builder().token(BOT_TOKEN).build()
+    app = Application.builder().token(config('BOT_TOKEN')).build()
 
     # Commands
-    app.add_handler(CommandHandler('start', start_command))
-    app.add_handler(CommandHandler('help', help_command))
-    app.add_handler(CommandHandler('custom', custom_command))
+    app.add_handler(CommandHandler('start', start))
+    app.add_handler(CommandHandler('help', help))
+    app.add_handler(CommandHandler('mail', mail))
+    app.add_handler(CommandHandler('settings', settings))
+    app.add_handler(CommandHandler('wait', wait))
+    app.add_handler(CommandHandler('now', now))
 
     # Messages
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
@@ -23,4 +37,4 @@ def create_bot():
 
     # Polls the bot
     print('Polling...')
-    app.run_polling(poll_interval=3)
+    app.run_polling()
