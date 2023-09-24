@@ -1,13 +1,16 @@
 from decouple import config
 from telegram import Update
 from telegram.ext import ContextTypes
-from .mail import sendMessage
+
+from ..controller import chat_controller
+from ..helpers.mail import sendMessage
+from ..models.entity import Chat
 
 
 # Commands
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        'Hello! Use /mail <username> to set a receiver'
+        'Hello! Use /mail <EMAIL> to set a receiver'
     )
 
 
@@ -23,21 +26,43 @@ async def mail(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/mail', '').strip()
 
     if update.message.chat.type == 'group':
-        await update.message.reply_text(text)
+        chat_controller.set_mail(
+            Chat(id=1, mail=text)
+        )
+        await update.message.reply_text(
+            chat_controller.search(
+                Chat(id=1)
+            )
+        )
 
 
 async def settings(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/settings', '').strip()
+    number: int = int(text)
 
     if update.message.chat.type == 'group':
-        await update.message.reply_text(text)
+        chat_controller.set_data(
+            Chat(id=1, frequency=number)
+        )
+        await update.message.reply_text(
+            chat_controller.search(
+                Chat(id=1)
+            )
+        )
 
 
 async def wait(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/wait', '').strip()
 
     if update.message.chat.type == 'group':
-        await update.message.reply_text(text)
+        chat_controller.set_data(
+            Chat(id=1, date=int(text))
+        )
+        await update.message.reply_text(
+            chat_controller.search(
+                Chat(id=1)
+            )
+        )
 
 
 async def now(update: Update, context: ContextTypes.DEFAULT_TYPE):

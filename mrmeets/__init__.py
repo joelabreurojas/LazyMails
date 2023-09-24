@@ -1,4 +1,14 @@
-from .bot import (
+from decouple import config
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    MessageHandler,
+    filters
+)
+
+from .controller import chat_controller
+from .helpers import util
+from .queries.bot import (
     start,
     help,
     mail,
@@ -8,17 +18,16 @@ from .bot import (
     handle_message,
     error
 )
-from decouple import config
-from telegram.ext import (
-    Application,
-    CommandHandler,
-    MessageHandler,
-    filters
-)
 
 
-def create_bot():
-    print('Startting bot...')
+def create_app():
+    # Prepare BD
+    if not util.DATABASE.exists():
+        chat_controller.reset()
+        print('DB created!')
+
+    # Init
+    print('Starting bot...')
     app = Application.builder().token(config('BOT_TOKEN')).build()
 
     # Commands
