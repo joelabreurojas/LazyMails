@@ -17,7 +17,6 @@ def fill_data(chat: Chat) -> Chat:
 
 def format_chat(chat: Chat, chat_: List[Chat]) -> Chat:
     chat_dict = chat_[0]._asdict()
-    print(chat)
 
     if isinstance(chat.mail, str):
         chat_dict['mail'] = chat.mail
