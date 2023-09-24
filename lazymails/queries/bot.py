@@ -55,10 +55,10 @@ async def mail(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def settings(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/settings', '').strip()
-    number: int = int(text)
     chat_id = int(update.message.chat.id)
 
     if update.message.chat.type in ['group', 'supergroup']:
+        number: int = int(text)
         chat_controller.set_data(
             Chat(id=chat_id, frequency=number)
         )
