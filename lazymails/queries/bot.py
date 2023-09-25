@@ -55,7 +55,7 @@ async def mail(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def settings(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text.replace('/settings', '').strip()
-    chat_id = int(update.message.chat.id)
+    chat_id = update.message.chat.id
 
     if update.message.chat.type in ['group', 'supergroup']:
         number: int = int(text)
@@ -81,8 +81,10 @@ async def wait(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def now(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat_id = int(update.message.chat.id)
+
     if update.message.chat.type in ['group', 'supergroup']:
-        chat_controller.send(Chat(id=1), update.message.chat.title)
+        chat_controller.send(Chat(id=chat_id), update.message.chat.title)
 
 
 # Responses
