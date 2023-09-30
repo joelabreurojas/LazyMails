@@ -1,26 +1,120 @@
-# LazyMails
+<h1 align='center'>
+    <img src='https://i.postimg.cc/mZCyxdrm/Lazy-Mails-Logo.png' alt='Logo' width='82'>
+    <br>
+    LazyMails
+    <br>
+    <br>
+    <a href="https://github.com/j4breu/LazyMailsBot/blob/main/LICENSE">
+    <img
+        alt='Logo'
+        src='https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=302d41&colorB=37c9ef'/>
+    </a>
+    <br>
+</h1>
 
-A telegram bot written in Python to send automated emails to remind a lazy teacher that his class exists.
+<p align='center'>
+    <em>A Telegram bot written in Python that sends emails to remind you to schedule meetings with your groups.</em>
+</p>
 
-## Usage
+&nbsp;
 
-**1). Create a virtual environment:**
-* `python -m venv env`
+### ⚙️ Configuration
 
-**2). Activate the virtual environment:**
-* `env\Scripts\activate` or `source env\Scripts\activate`
+<details open>
+<summary>Set up</summary>
 
-**3). Install the necessary packages:**
-* `pip install -r requirements.txt`
+> Check your version, _we use `python` > `3.11`_:
 
-**4). Create a .env file for the bot**
-* `BOT_TOKEN=<YOUR_BOT_TOKEN>`
-* `BOT_USERNAME=<YOUR_BOT_USERNAME>`
+```
+python -V
+```
 
-* `MAIL_USERNAME=<YOUR_EMAIL>`
-* `MAIL_PASSWORD=<YOUR_EMAIL_TOKEN>`
-* `MAIL_SERVER=<YOUR_SERVER>`
-* `MAIL_PORT=<YOUR_PORT>`
+> Download the project:
 
-**5). Run:**
-* `python run.py` or `python -m lazymails`
+```
+git clone git@github.com:j4breu/LazyMailsBot.git
+cd LazyMailsBot/
+```
+
+</details>
+<details open>
+<summary>Credentials</summary>
+
+```
+// .env
+BOT_TOKEN=<YOUR_BOT_TOKEN>
+BOT_USERNAME=<YOUR_BOT_USERNAME>
+
+MAIL_USERNAME=<YOUR_MAIL>
+MAIL_PASSWORD=<YOUR_MAIL_TOKEN>
+MAIL_SERVER=<YOUR_SERVER>
+MAIL_PORT=<YOUR_PORT>
+```
+
+</details>
+
+<details open>
+<summary>Environment</summary>
+
+> Create:
+
+```
+python -m venv <name>
+```
+
+> Activate:
+
+```
+// Linux or Mac
+source <name>\bin\activate
+```
+```
+// Windows
+source <name>\Scripts\activate
+```
+
+> Install:
+
+```
+pip install -r requirements.txt
+```
+
+> Run:
+
+```
+python run.py
+```
+```
+// Alternative
+python -m lazymails
+```
+
+</details>
+
+&nbsp;
+
+### 💻 Usage
+
+> Don't forget to run the project!
+
+1. Click <a href='https://t.me/LazyMailsBot'>here</a> to add LazyMails to your account.
+    
+2. Invite it to a group or super-group chat.
+    
+3. Give it admin privileges.
+    
+4. Use `/help` for an introduction.
+    
+5. Have fun with it!
+
+&nbsp;
+
+### 👐 Contribute
+
+> Improvements?
+
+* Don't hesitate to create a PR.
+
+> Problems?
+
+* Feel free to open a new issue!
