@@ -18,6 +18,23 @@
 
 &nbsp;
 
+<p align="center">
+    <img src="https://i.postimg.cc/8zp7Srch/Happy-Path.jpg" alt="Happy Path">
+</p>
+<p align="center">
+    <em>Happy Path</em>
+</p>
+<br>
+
+<p align="center">
+    <img src="https://i.postimg.cc/9X9b4spL/Message.jpg" alt="Message">
+</p>
+<p align="center">
+    <em>Message</em>
+</p>
+
+&nbsp;
+
 ### ⚙️ Configuration
 
 <details open>
