@@ -4,7 +4,7 @@
     LazyMails
     <br>
     <br>
-    <a href="https://github.com/j4breu/LazyMailsBot/blob/main/LICENSE">
+    <a href="https://github.com/joelabreurojas/LazyMailsBot/blob/main/LICENSE">
     <img
         alt='Logo'
         src='https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=302d41&colorB=37c9ef'/>
@@ -49,7 +49,7 @@ python -V
 > Download the project:
 
 ```
-git clone git@github.com:j4breu/LazyMailsBot.git
+git clone git@github.com:joelabreurojas/LazyMailsBot.git
 cd LazyMailsBot/
 ```
 
